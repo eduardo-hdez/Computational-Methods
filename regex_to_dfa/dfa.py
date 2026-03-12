@@ -105,6 +105,8 @@ def accepts(dfa_transitions, start_state, accept_states, input_string):
     current_state = start_state
 
     for character in input_string:
-        current_state = dfa_transitions.get((current_state, character), frozenset())
+        current_state = dfa_transitions.get(
+            (current_state, character), frozenset()
+        )
 
     return current_state in accept_states

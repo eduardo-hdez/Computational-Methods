@@ -9,7 +9,7 @@ def main():
 
     concat  = add_concat(input_regex)
     postfix = shunting_yard(concat)
-    nfa     = build_nfa(postfix)
+    nfa = build_nfa(postfix)
     dfa_transitions, start, accept_states = nfa_to_dfa(nfa, input_alphabet)
 
     print("----RESULTS----")

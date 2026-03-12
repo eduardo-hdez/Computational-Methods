@@ -6,7 +6,7 @@ def add_concat(regex):
 
         if i + 1 < len(regex):
             left, right = c, regex[i + 1]
-            left_ok  = left not in "(|"
+            left_ok = left not in "(|"
             right_ok = right not in ")|*+?"
 
             if left_ok and right_ok:
