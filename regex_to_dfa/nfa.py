@@ -7,10 +7,12 @@ class State:
         self.transitions = {}
         self.epsilon = []
 
+
 class NFA:
     def __init__(self, start, accept):
         self.start = start
         self.accept = accept
+
 
 def build_nfa(postfix):
     State._id_counter = 0
@@ -19,7 +21,7 @@ def build_nfa(postfix):
     for character in postfix:
         if character == '.':
             right, left = stack.pop(), stack.pop()
-            State(); State() # create two new states for the concatenation
+            State._id_counter += 2 # create two new states for the concatenation
             left.accept.epsilon.append(right.start)
             stack.append(NFA(left.start, right.accept))
 
@@ -63,6 +65,7 @@ def build_nfa(postfix):
             stack.append(NFA(start, accept))
 
     return stack[0]
+
 
 def print_nfa(nfa):
     visited = set()

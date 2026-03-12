@@ -1,5 +1,6 @@
 PRECEDENCE = {'*': 3, '+': 3, '?': 3, '.': 2, '|': 1}
 
+
 def shunting_yard(regex):
     output, operators = [], []
 
@@ -25,5 +26,5 @@ def shunting_yard(regex):
 
     while operators:
         output.append(operators.pop())
-        
+
     return ''.join(output)

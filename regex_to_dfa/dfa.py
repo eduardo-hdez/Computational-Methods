@@ -12,6 +12,7 @@ def epsilon_closure(states):
 
     return frozenset(closure)
 
+
 def move(states, symbol):
     reachable = set()
 
@@ -19,6 +20,7 @@ def move(states, symbol):
         reachable |= set(state.transitions.get(symbol, []))
 
     return reachable
+
 
 def nfa_to_dfa(nfa, alphabet):
     start_state = epsilon_closure({nfa.start})
@@ -46,6 +48,7 @@ def nfa_to_dfa(nfa, alphabet):
             accept_states.add(state)
 
     return dfa_transitions, start_state, accept_states
+
 
 def print_dfa(dfa_transitions, start_state, accept_states):
     state_names = {}
@@ -100,6 +103,7 @@ def print_dfa(dfa_transitions, start_state, accept_states):
 
     accepting_names = sorted(accepting_names)
     print(f"Accepting states: {accepting_names}")
+
 
 def accepts(dfa_transitions, start_state, accept_states, input_string):
     current_state = start_state
