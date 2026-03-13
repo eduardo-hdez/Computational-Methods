@@ -1,3 +1,8 @@
+"""
+shunting_yard.py
+Author: Eduardo Hernández Alonso
+"""
+
 PRECEDENCE = {'*': 3, '+': 3, '?': 3, '.': 2, '|': 1}
 
 

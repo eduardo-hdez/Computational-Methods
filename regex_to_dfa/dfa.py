@@ -1,3 +1,8 @@
+"""
+dfa.py
+Author: Eduardo Hernández Alonso
+"""
+
 def epsilon_closure(states):
     stack = list(states)
     closure = set(states)

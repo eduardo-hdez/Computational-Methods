@@ -1,3 +1,8 @@
+"""
+nfa.py
+Author: Eduardo Hernández Alonso
+"""
+
 class State:
     _id_counter = 0
 

@@ -1,3 +1,8 @@
+"""
+main.py
+Author: Eduardo Hernández Alonso
+"""
+
 from add_concat import add_concat
 from shunting_yard import shunting_yard
 from nfa import build_nfa, print_nfa

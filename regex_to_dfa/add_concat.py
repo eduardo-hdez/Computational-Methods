@@ -1,3 +1,8 @@
+"""
+add_concat.py
+Author: Eduardo Hernández Alonso
+"""
+
 def add_concat(regex):
     result = []
 
