@@ -76,6 +76,7 @@ def print_dfa(dfa_transitions, start_state, accept_states):
                 queue.append(next_state)
 
     print("\nDFA:")
+    
     for state in sorted(state_names, key=lambda entry: state_names[entry]):
         symbols = []
 
