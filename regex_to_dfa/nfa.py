@@ -21,7 +21,6 @@ def build_nfa(postfix):
     for character in postfix:
         if character == '.':
             right, left = stack.pop(), stack.pop()
-            State._id_counter += 2 # create two new states for the concatenation
             left.accept.epsilon.append(right.start)
             stack.append(NFA(left.start, right.accept))
 
