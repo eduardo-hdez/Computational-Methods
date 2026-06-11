@@ -12,7 +12,6 @@ using namespace std;
 using namespace std::chrono;
 
 #define SIZE 5000000
-#define N    10
 
 bool isPrime(int n) {
     if (n < 2) return false;
@@ -29,23 +28,19 @@ int main(int argc, char* argv[]) {
     double timeElapsed;
 
     cout << "Starting...\n";
-    timeElapsed = 0;
-    for (int j = 0; j < N; j++) {
-        sum = 0;
-        startTime = high_resolution_clock::now();
+    sum = 0;
+    startTime = high_resolution_clock::now();
 
-        for (int n = 2; n < SIZE; n++) {
-            if (isPrime(n)) sum += n;
-        }
-
-        endTime = high_resolution_clock::now();
-        timeElapsed +=
-            duration<double, milli>(endTime - startTime).count();
+    for (int n = 2; n < SIZE; n++) {
+        if (isPrime(n)) sum += n;
     }
 
+    endTime = high_resolution_clock::now();
+    timeElapsed = duration<double, milli>(endTime - startTime).count();
+
     cout << "Sum of primes below 5,000,000: " << sum << std::endl;
-    cout << "avg time = " << fixed << setprecision(3)
-         << (timeElapsed / N) << std::endl;
+    cout << "time = " << fixed << setprecision(3)
+         << timeElapsed << " ms" << std::endl;
 
     return 0;
 }
