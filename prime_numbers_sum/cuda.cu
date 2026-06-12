@@ -89,7 +89,7 @@ int main(int argc, char *argv[]) {
 
     cout << "sum of primes below " << SIZE << " = " << sum << std::endl;
     cout << "avg time = " << fixed << setprecision(3)
-         << (timeElapsed / N) << " ms\n";
+         << (timeElapsed / N) << " ms" << std::endl;
 
     cudaFree(d_r);
 
